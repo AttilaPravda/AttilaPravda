@@ -1,0 +1,13 @@
+// @import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slider-container {
+  background: url(./assets/slider-bg.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
