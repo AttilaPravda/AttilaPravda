@@ -1,8 +1,3 @@
-.containerSlider {
-  padding: 40px;
-  max-width: 1170px;
-  margin: 0 auto;
-}
 .green-text {
   color: #dcf836;
 }
@@ -14,6 +9,15 @@
   .description-wrapper {
     width: 70%;
     margin-top: 50px;
+    @media only screen and (max-device-width: 780px) {
+      width: 100%;
+      text-align: center;
+
+      img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
   }
 
   h2 {
@@ -22,21 +26,17 @@
 
   .description {
     display: flex;
-  }
-
-  button {
-    font-family: "OpenSans", sans-serif;
-    font-weight: 600;
-    background-color: #dd003f;
-    color: #ffffff;
-    padding: 11px 25px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
+    @media only screen and (max-device-width: 780px) {
+      display: block;
+    }
   }
 
   .text {
     margin-left: 20px;
+
+    @media only screen and (max-device-width: 780px) {
+      text-align: left;
+    }
 
     h4 {
       margin-top: 0;
@@ -133,6 +133,11 @@
 .slick-dots {
   display: flex !important;
   flex-direction: row-reverse;
+
+  @media only screen and (max-device-width: 780px) {
+    display: block !important;
+    position: relative !important;
+  }
 
   li button:before {
     font-size: 10px;

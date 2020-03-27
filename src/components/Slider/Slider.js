@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "./Slider.scss";
+import noImage from "../../assets/no-image.jpg"
 
 import {getRandomInt} from '../../api/api'
 
-function ResultSlider({ stateList, stateGenre, stateYear, getData }) {
+function ResultSlider({ stateList, stateGenre, stateYear }) {
   const [state] = useState(getRandomInt(stateList.length))
 
   const settings = {
@@ -46,16 +47,20 @@ function ResultSlider({ stateList, stateGenre, stateYear, getData }) {
   };
 
   return (
-    <div className="containerSlider">
+    <div className="wrapper">
       <div className="recomended">
-        <div>
-          <button onClick={() => getData()}>What to watch</button>
-        </div>
         <div className="description-wrapper">
           <div className="description">
             <img
-              src={`https://image.tmdb.org/t/p/w200${stateList[state].poster_path}`}
-              alt={stateList[state].original_title}
+              src={
+                stateList[state].poster_path
+                  ? `https://image.tmdb.org/t/p/w200${stateList[state].poster_path}`
+                  : noImage
+              }
+              alt={stateList[state].title}
+              onError={e =>
+                (e.target.src = noImage)
+              }
             />
             <div className="text">
               <h2>
@@ -63,7 +68,7 @@ function ResultSlider({ stateList, stateGenre, stateYear, getData }) {
                 <span className="green-text"> {stateYear}</span>, and Genre of
                 movie is <span className="green-text">{stateGenre}</span>
               </h2>
-              <h4>{stateList[state].original_title}</h4>
+              <h4>{stateList[state].title}</h4>
               <p>{stateList[state].overview}</p>
             </div>
           </div>
@@ -76,8 +81,15 @@ function ResultSlider({ stateList, stateGenre, stateYear, getData }) {
             return (
               <div key={key}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                  alt={item.original_title}
+                  src={
+                    item.poster_path
+                      ? `https://image.tmdb.org/t/p/w200${item.poster_path}`
+                      : noImage
+                  }
+                  onError={e =>
+                    (e.target.src = noImage)
+                  }
+                  alt={item.title}
                 />
                 <div className="title-in">
                   <div className="cate">

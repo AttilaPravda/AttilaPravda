@@ -7,7 +7,13 @@
   background-position: center;
   background-size: cover;
   position: relative;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 50px;
   min-height: 100vh;
+}
+
+.wrapper {
+  padding: 40px;
+  max-width: 1170px;
+  margin: 0 auto;
 }
