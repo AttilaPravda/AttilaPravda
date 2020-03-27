@@ -13,7 +13,6 @@ function App() {
   
 
   const getData = async () => {
-    setstateList(null)
     let typeNo = getRandomInt(MovieGenres.length);
     let yearNo = getRandomInt(yearNum);
     setstateYear(2020 - yearNo);
