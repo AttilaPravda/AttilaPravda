@@ -6,7 +6,7 @@ import noImage from "../../assets/no-image.jpg"
 import {getRandomInt} from '../../api/api'
 
 function ResultSlider({ stateList, stateGenre, stateYear }) {
-  const [state] = useState(getRandomInt(stateList.length))
+  const [random] = useState(getRandomInt(stateList.length))
 
   const settings = {
     arrows: false,
@@ -53,14 +53,12 @@ function ResultSlider({ stateList, stateGenre, stateYear }) {
           <div className="description">
             <img
               src={
-                stateList[state].poster_path
+                stateList[random].poster_path
                   ? `https://image.tmdb.org/t/p/w200${stateList[state].poster_path}`
                   : noImage
               }
-              alt={stateList[state].title}
-              onError={e =>
-                (e.target.src = noImage)
-              }
+              alt={stateList[random].title}
+              onError={e => (e.target.src = noImage)}
             />
             <div className="text">
               <h2>
@@ -68,8 +66,8 @@ function ResultSlider({ stateList, stateGenre, stateYear }) {
                 <span className="green-text"> {stateYear}</span>, and Genre of
                 movie is <span className="green-text">{stateGenre}</span>
               </h2>
-              <h4>{stateList[state].title}</h4>
-              <p>{stateList[state].overview}</p>
+              <h4>{stateList[random].title}</h4>
+              <p>{stateList[random].overview}</p>
             </div>
           </div>
         </div>
@@ -86,9 +84,7 @@ function ResultSlider({ stateList, stateGenre, stateYear }) {
                       ? `https://image.tmdb.org/t/p/w200${item.poster_path}`
                       : noImage
                   }
-                  onError={e =>
-                    (e.target.src = noImage)
-                  }
+                  onError={e => (e.target.src = noImage)}
                   alt={item.title}
                 />
                 <div className="title-in">
