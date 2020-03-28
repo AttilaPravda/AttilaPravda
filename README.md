@@ -1,4 +1,4 @@
-Corona Movie Generator - Recommend random movie for you to watch
+Corona Movie Generator - Recommend random movie for you to watch.<br />
 demo: https://attilapravda.github.io/CMG/
 
 ### `before start`
