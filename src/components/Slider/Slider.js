@@ -54,7 +54,7 @@ function ResultSlider({ stateList, stateGenre, stateYear }) {
             <img
               src={
                 stateList[random].poster_path
-                  ? `https://image.tmdb.org/t/p/w200${stateList[state].poster_path}`
+                  ? `https://image.tmdb.org/t/p/w200${stateList[random].poster_path}`
                   : noImage
               }
               alt={stateList[random].title}
