@@ -8,7 +8,7 @@ export const getListOfMovies = (genre, year) => {
   return new Promise((resolve, reject) => {
     axios({
       method: "GET",
-      url: `https://api.themoviedb.org/3/discover/movie?api_key=68d8f92e9499c170b8c35de553f3dda1&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${year}&with_genres=${genre}`
+      url: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${year}&with_genres=${genre}`
     })
       .then(response => {
         resolve(response.data.results);
