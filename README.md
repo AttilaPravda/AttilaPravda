@@ -1,4 +1,5 @@
 Corona Movie Generator - Recommend random movie for you to watch
+demo: https://attilapravda.github.io/CMG/
 
 ### `before start`
 You need to create api key on https://developers.themoviedb.org/ and add it to your project.
