@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import './App.scss';
+import "./App.scss";
 import { getListOfMovies, MovieGenres, getRandomInt } from "./api/api";
 import ResultSlider from "./components/Slider/Slider";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [stateList, setstateList] = useState(null)
-  const [stateGenre, setstateGenre] = useState(null)
-  const [stateYear, setstateYear] = useState(null)
+  const [stateList, setstateList] = useState(null);
+  const [stateGenre, setstateGenre] = useState(null);
+  const [stateYear, setstateYear] = useState(null);
   const yearNum = 35;
-  
 
-  const getData = async () => {
+  const getData = () => {
     let typeNo = getRandomInt(MovieGenres.length);
     let yearNo = getRandomInt(yearNum);
     setstateYear(2020 - yearNo);
@@ -24,9 +23,9 @@ function App() {
   };
 
   useEffect(() => {
-    getData()
+    getData();
   }, []);
-  
+
   return (
     <>
       <div className="slider-container">
